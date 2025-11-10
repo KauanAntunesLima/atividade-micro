@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeria Simples</title>
+</head>
+<body>
+  <img id="imagem" src="https://picsum.photos/id/1011/400/300" width="400" height="300">
+  <br>
+  <button id="anterior">Anterior</button>
+  <button id="proximo">Próximo</button>
+
+  <script>
+    const imagens = [
+      "https://picsum.photos/id/1011/400/300",
+      "https://picsum.photos/id/1012/400/300",
+      "https://picsum.photos/id/1013/400/300",
+      "https://picsum.photos/id/1015/400/300"
+    ];
+
+    let indiceAtual = 0;
+    const img = document.getElementById("imagem");
+
+    document.getElementById("proximo").addEventListener("click", () => {
+      indiceAtual = (indiceAtual + 1) % imagens.length;
+      img.src = imagens[indiceAtual];
+    });
+
+    document.getElementById("anterior").addEventListener("click", () => {
+      indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+      img.src = imagens[indiceAtual];
+    });
+  </script>
+</body>
+</html>

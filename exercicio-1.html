@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador Simples</title>
+</head>
+<body>
+  <h2 id="contador">0</h2>
+  <button id="btnIncrementar">Incrementar</button>
+  <button id="btnResetar">Resetar</button>
+
+  <script>
+    let contador = 0;
+    const h2 = document.getElementById("contador");
+
+    document.getElementById("btnIncrementar").addEventListener("click", () => {
+      contador++;
+      h2.textContent = contador;
+    });
+
+    document.getElementById("btnResetar").addEventListener("click", () => {
+      contador = 0;
+      h2.textContent = contador;
+    });
+  </script>
+</body>
+</html>
